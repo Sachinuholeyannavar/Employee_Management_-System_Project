@@ -1,0 +1,74 @@
+
+
+<html lang="en">
+	<head>
+		<title>display</title>
+		<link rel="stylesheet" href="../static/style.css">
+	</head>
+	<body bgcolor="#e6ffee">
+		<div class="one">
+			<div class="two">
+				<h1 style="color:black">Side Bar</h1>
+				<ul>
+					<li><a href="{{url_for('index')}}" style="color:black">Index</a></li>
+					<li class="active"><a href="{{url_for('display')}}" style="color:black">Display</a></li>
+					<li><a href="{{url_for('update')}}" style="color:black">Update</a></li>
+					<li><a href="{{url_for('logout')}}" style="color:black">Log out</a></li>
+				</ul>
+			</div>
+			<div class="content" align="center">
+				<div class="topbar">
+					<h2 style="color:black">Welcome!! You are in Display Page!! </h2>				
+				</div> </br>
+				<div class="contentbar">
+					<h1 style="color:black">Your Details</h1> </br>
+					{% block content %}
+						<div style="color:black;">
+							<table class="worddark"></br></br></br></br>
+								<div color="black">
+								<tr>
+									<td style="color:black">Username:</td>
+									<td style="color:black">{{ account['username'] }}</td>
+								</tr>
+								<tr>
+									<td style="color:black">Password:</td>
+									<td style="color:black">{{ account['password'] }}</td>
+								</tr>
+								<tr>
+									<td style="color:black">Email ID:</td>
+									<td style="color:black">{{ account['email'] }}</td>
+								</tr>
+								<tr>
+									<td style="color:black">Organisation:</td>
+									<td style="color:black">{{ account['organisation'] }}</td>
+								</tr>
+								<tr>
+									<td style="color:black">Address:</td>
+									<td style="color:black">{{ account['address'] }}</td>
+								</tr>
+								<tr>
+									<td style="color:black">City:</td>
+									<td style="color:black">{{ account['city'] }}</td>
+								</tr>
+								<tr>
+									<td style="color:black">State:</td>
+									<td style="color:black">{{ account['state'] }}</td>
+								</tr>
+								<tr>
+									<td style="color:black">Country:</td>
+									<td style="color:black">{{ account['country'] }}</td>
+								</tr>
+								<tr>
+									<td style="color:black">Postal code:</td>
+									<td style="color:black">{{ account['postalcode'] }}</td>
+								</tr>	
+							</div>				
+							</table>
+						</div>
+					{% endblock %}									
+				</div>
+				
+			</div>0
+		</div>
+	</body>
+</html>
